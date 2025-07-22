@@ -1,0 +1,15 @@
+create_supply_net VDD
+create_supply_net VSS
+create_supply_net VDDo
+
+create_power_domain simpleuart
+set_domain_supply_net simpleuart -primary_ground_net VSS -primary_power_net VDD
+set_related_supply_net -power VDDo -ground VSS
+
+create_supply_port VDDo -domain simpleuart -direction in
+create_supply_port VDD -domain simpleuart -direction in
+create_supply_port VSS -domain simpleuart -direction in 
+
+connect_supply_net VDDo -ports VDDo
+connect_supply_net VDD -ports VDD
+connect_supply_net VSS -ports VSS
