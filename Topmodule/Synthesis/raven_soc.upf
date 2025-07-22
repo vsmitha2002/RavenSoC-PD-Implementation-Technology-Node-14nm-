@@ -1,0 +1,34 @@
+remove_upf
+
+load_upf   /home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/PICORV32_PCPI_DIV/SCRIPTS/picorv32_pcpi_div.upf    -scope cpu/genblk2.pcpi_div
+load_upf   /home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/PICORV32_PCPI_MUL/SCRIPTS/picorv32_pcpi_mul.upf    -scope cpu/genblk1.pcpi_mul
+load_upf   /home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/SPIMEMIO/SCRIPTS/spimemio.upf                       -scope spimemio
+load_upf   /home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/SIMPLEUART/SCRIPTS/simpleuart.upf                   -scope simpleuart
+
+
+#########################################################
+#creating supply nets
+#########################################################
+create_supply_net VDD
+create_supply_net VDDH
+create_supply_net VSS
+
+#########################################################
+#creating supply set
+#########################################################
+create_power_domain  Raven_top -include_scope 
+set_domain_supply_net Raven_top -primary_power_net VDD -primary_ground_net VSS
+
+#########################################################
+#creating supply port
+#########################################################
+create_supply_port VDDH -domain Raven_top -direction in
+create_supply_port VDD -domain Raven_top -direction in
+create_supply_port VSS -domain Raven_top -direction in
+
+#########################################################
+#connecting supply port
+#########################################################
+connect_supply_net VDD -ports {VDD spimemio/VDD cpu/genblk1.pcpi_mul/VDD simpleuart/VDDo cpu/genblk2.pcpi_div/VDDo}
+connect_supply_net VSS -ports {VSS spimemio/VSS cpu/genblk1.pcpi_mul/VSS simpleuart/VSS cpu/genblk2.pcpi_div/VSS}
+connect_supply_net VDDH -ports {VDDH simpleuart/VDD cpu/genblk2.pcpi_div/VDD}

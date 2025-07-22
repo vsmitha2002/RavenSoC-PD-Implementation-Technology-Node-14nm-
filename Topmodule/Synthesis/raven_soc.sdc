@@ -1,0 +1,18 @@
+create_clock -period 10 -name pll [get_ports pll_clk]
+
+create_clock -period 5.0 -name ext [get_ports ext_clk]
+
+set_input_delay 0.5 -clock pll [all_inputs]
+
+set_input_delay 0.5 -clock ext [all_inputs]
+
+set_output_delay 0.5 [all_outputs]
+
+set_load -pin_load 0.2 [all_outputs]
+
+set_max_fanout 200 [current_design]
+
+set_max_transition 0.5 [current_design]
+
+set_max_capacitance 50 [current_design]
+
