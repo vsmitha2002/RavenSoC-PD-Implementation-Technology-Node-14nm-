@@ -57,7 +57,8 @@ Multivoltage intent (.upf)
 Outputs:  
 Gate-level netlist (.v)  
 Synthesis reports (timing, area, power)  
-Initial constraints (.sdc)  
+Initial constraints (.sdc)
+updated upf or  supplementary upf
 Objective:  
 Generate an optimized netlist that meets functionality, timing, and design constraints, acting as the handoff to physical design.
 
@@ -76,13 +77,21 @@ Physical synthesis reports
 Objective:
 Improve timing closure, congestion, and routability before standard cell placement by using early layout feedback.
 
+Physical Synthesis:
+💠In Logical synthesis design might not meet the expected result.
+💠The overall goal of physical synthesis is to consider late-stage implementation effects early in the design process with sufficient detail to create a convergent design flow, where there is minimal need for re-work and correction.
+💠The logical synthesized netlist and floorplan are the inputs for a physical synthesis.
+💠When we provide the floorplan DEF which has macro locations synthesis team uses these exact locations and completes synthesis which is known as physical synthesis.
+💠Since Physical location of macros is known, by doing this, tool can do more accurate optimization and report more realistic timing and area.
+💠The logical synthesis optimizes the logic, timing, and functionality, whereas physical synthesis optimizes the area and power.
+
 📥 3. Import Design (Netlist-In)
 Purpose:
 Set up the design environment and load all files into the PnR tool (e.g., IC Compiler II).  
 Inputs:  
 Gate-level netlist (.v)  
 Constraints (.sdc)  
-Power intent (.upf)  
+Power intent (.upf)  or  supplementary upf
 Tech files (.lef, .lib, .tlu+, .tf)  
 DEF (if macros placed)  
 Outputs:  
