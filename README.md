@@ -8,8 +8,8 @@ Design and implementation of Raven SoC with custom hard macro creation and integ
 
 🔥 Key Focus Areas
 
-1.Designed and implemented four hard macros for Raven SoC, optimized for area, power, and performance.
-2.Integrated the hard macros into the top-level design with optimized floor planning, placement, and routing.
+1.Designed and implemented four hard macros for Raven SoC, optimized for area, power, and performance.  
+2.Integrated the hard macros into the top-level design with optimized floor planning, placement, and routing.  
 3.Achieved timing closure using Static Timing Analysis (STA) with multi-voltage domain constraints and physical optimizations.
 
 
