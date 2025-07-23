@@ -1,14 +1,19 @@
 
 🚀 Raven_SoC Physical Design (PD) Implementation – 14nm
+
 📌 Project Overview
+
 Objective:
 Design and implementation of Raven SoC with custom hard macro creation and integration, targeting 14nm technology.
+
 🔥 Key Focus Areas
+
 🧱 Designed and implemented four hard macros for Raven SoC, optimized for area, power, and performance.
 
 🧩 Integrated the hard macros into the top-level design with optimized floor planning, placement, and routing.
 
 ⏱️ Achieved timing closure using Static Timing Analysis (STA) with multi-voltage domain constraints and physical optimizations.
+
 
 🧪 Specifications
 | Parameter                  | Details                           |
@@ -21,6 +26,7 @@ Design and implementation of Raven SoC with custom hard macro creation and integ
 | **Input Ports**            | Placed on Side 1 & Side 3         |
 | **Output Ports**           | Placed on Side 2 & Side 4         |
 
+
 🧩 Sub-Modules & Voltages
 | Module Name              | Voltage | Type       | Notes                |
 | ------------------------ | ------- | ---------- | -------------------- |
@@ -30,6 +36,7 @@ Design and implementation of Raven SoC with custom hard macro creation and integ
 | `Picorv32_reg`           | 0.6V    | Soft Block | Register file        |
 | `Simpleuart`             | 0.72V   | Hard Macro | UART interface       |
 | `Picorv32_pcpi_div`      | 0.72V   | Hard Macro | Division logic       |
+
 
 ⛓️ SDC Constraints Summary
 | Constraint Type        | Value                             |
