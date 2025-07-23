@@ -1,7 +1,6 @@
 
 🚀 Raven_SoC Physical Design (PD) Implementation – 14nm  
-📌 Project Overview  
-Objective:  
+📌Objective:  
 Design and implementation of Raven SoC with custom hard macro creation and integration, targeting 14nm technology.  
 🔥 Key Focus Areas  
 1.Designed and implemented four hard macros for Raven SoC, optimized for area, power, and performance.  
