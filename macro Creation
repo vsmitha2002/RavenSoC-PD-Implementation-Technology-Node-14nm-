@@ -1,10 +1,10 @@
 
-create_workspace -technology /home1/BPD23/VSchandrika/VLSI_PD/Project/MACROS/ref/tech/saed32nm_1p9m.tf -flow normal spimemio
+create_workspace -technology "/home1/14_nmts/14_nmts/tech/milkyway/saed14nm_1p9m_mw.tf" -flow normal spimemio
 read_gds /home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/SPIMEMIO/ndm/work_dir/spimemio.gds
 check_workspace
 commit_workspace -output spimemio.ndm 
-open_lib /home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/SPIMEMIO/ndm/work_dir/spimemio.ndm"
+open_lib /home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/SPIMEMIO/ndm/work_dir/spimemio.ndm
 open_block spimemio.frame
 close_lib
-create_workspace -flow edit /home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/SPIMEMIO/ndm/work_dir/spimemio.ndm"
+create_workspace -flow edit /home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/SPIMEMIO/ndm/work_dir/spimemio.ndm
 set_attribute [get_lib_cells spimemio] design_type macro
