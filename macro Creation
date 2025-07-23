@@ -1,1 +1,10 @@
 
+create_workspace -technology /home1/BPD23/VSchandrika/VLSI_PD/Project/MACROS/ref/tech/saed32nm_1p9m.tf -flow normal machine_counter_ndm
+read_gds /home1/BPD23/VSchandrika/VLSI_PD/Project/MACROS/results/machine_counter.gds
+check_workspace
+commit_workspace -output machine_counter.ndm 
+open_lib /home1/BPD23/VSchandrika/VLSI_PD/Project/MACROS/WORK_DIR/machine_counter.ndm
+open_block machine_counter.frame
+close_lib
+create_workspace -flow edit /home1/BPD23/VSchandrika/VLSI_PD/Project/MACROS/WORK_DIR/machine_counter.ndm
+set_attribute [get_lib_cells machine_counter] design_type macro
