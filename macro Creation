@@ -3,7 +3,7 @@ create_workspace -technology /home1/BPD23/VSchandrika/VLSI_PD/Project/MACROS/ref
 read_gds /home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/SPIMEMIO/ndm/work_dir/spimemio.gds
 check_workspace
 commit_workspace -output spimemio.ndm 
-open_lib		/home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/SPIMEMIO/ndm/work_dir/spimemio.ndm"
+open_lib /home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/SPIMEMIO/ndm/work_dir/spimemio.ndm"
 open_block spimemio.frame
 close_lib
 create_workspace -flow edit /home1/BPD23/VSchandrika/RM_Raven/SUBMODULE/SPIMEMIO/ndm/work_dir/spimemio.ndm"
