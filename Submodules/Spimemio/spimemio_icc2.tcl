@@ -158,4 +158,4 @@ write_verilog ../results/spimemio.v
 write_gds ../results/spimemio.gds
 write_sdc -output ../results/spimemio.sdc
 
-i
+
