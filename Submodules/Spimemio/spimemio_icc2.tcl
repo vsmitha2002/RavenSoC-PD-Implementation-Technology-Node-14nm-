@@ -102,6 +102,50 @@ report_congestion
 report_utilization
 set_attribute [get_cells *] physical_status fixed
 
+
+################# Placement ###################
+create_placement -incremental -congestion 
+legalize_placement 
+magnet_placement [get_ports clk]
+place_opt
+
+####placement checks#######
+check_legality
+report_timing
+report_utilization
+check_pg_drc
+check_pg_missing_vias
+check_pg_connectivity
+
+
+#############Routing Rules#################
+set clock_min_layer "M4"
+set clock_max_layer "M5"
+
+set route_min_layer "M1"
+set route_max_layer "M5"
+
+################ CTS Stage ################
+clock_opt
+report_timing
+report_clock_settings
+report_qor -summary
+
+################ Routing stage ################
+route_auto -max_detail_route_iterations 30
+route_opt
+route_eco
+
+#routing checks
+report_timing
+
+##############Filler cells placement ##############
+set_attribute [ get_lib_cells *FILL*] dont_use false
+create_stdcell_fillers -lib_cells [get_lib_cells *FILL*] -rules {post_route_auto_delete}
+connect_pg_net
+remove_stdcell_fillers_with_violation
+check_legality
+
 ##########################################################################################################################
 report_area
 report_timing
